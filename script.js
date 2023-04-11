@@ -11,6 +11,7 @@ let previousGuesses = document.getElementById('attempts');
 let messageToUser = document.getElementById('messageToUser');
 let sumbitButton = document.getElementById('sumbitButton');
 const playAgainButton = document.getElementById("playAgainButton");
+const winOrLoseBG = document.getElementById("customBackground");
 let previousGuessesArr = [];
 
 playAgainButton.style.visibility = "hidden";
@@ -36,14 +37,22 @@ function processGuess(event) {
     }
     if (userGuess === randomNumber) {
         messageToUser.innerText = "Great! You Won!!";
-        messageToUser.style.color = 'green';
+        messageToUser.style.color = 'white';
+        winOrLoseBG.style.backgroundColor = 'green';
+        messageToUser.style.padding = '10px';
         userInput.disabled = true;
         sumbitButton.disabled = true;
         playAgainButton.style.visibility = "visible";
     }
 }
 else {
-    alert("You lost!");
+    messageToUser.innerText = " !! GAME OVER !!";
+    messageToUser.style.color = 'white';
+    winOrLoseBG.style.backgroundColor = 'red';
+    messageToUser.style.padding = '10px';
+    userInput.disabled = true;
+    sumbitButton.disabled = true;
+    playAgainButton.style.visibility = "visible";
 }
 }
 function renderAttempts() {
