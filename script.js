@@ -11,31 +11,28 @@ let previousGuesses = document.getElementById('attempts');
 let messageToUser = document.getElementById('messageToUser');
 let sumbitButton = document.getElementById('sumbitButton');
 const playAgainButton = document.getElementById("playAgainButton");
+let previousGuessesArr = [];
 
 playAgainButton.style.visibility = "hidden";
 
 function processGuess(event) {
-    let count = 0;
+
+    if (previousGuessesArr.length < 10) {
     let userGuess = Number(userInput.value); 
+    previousGuessesArr.push(userGuess);
+    renderAttempts();
     console.log(randomNumber);
     console.log(userGuess);
     event.preventDefault();
-    userInput.value = "";
-
-    if (count == 0){
-        previousGuesses.textContent = "Previous guesses: ";
-    }
+    userInput.value = "";    
+   
     if (userGuess < randomNumber) {
         messageToUser.innerText = "Last guess was too low!"
         messageToUser.style.color = 'blue';
-        count++;
-        previousGuesses.textContent +=  userGuess + ' ';
     }
     if (userGuess > randomNumber) {
         messageToUser.innerText = "Last guess was too high!"
         messageToUser.style.color = 'red';
-        count++;
-        previousGuesses.textContent +=  userGuess + ' ';
     }
     if (userGuess === randomNumber) {
         messageToUser.innerText = "Great! You Won!!";
@@ -45,7 +42,13 @@ function processGuess(event) {
         playAgainButton.style.visibility = "visible";
     }
 }
-
+else {
+    alert("You lost!");
+}
+}
+function renderAttempts() {
+    previousGuesses.innerText = 'Previous guesses: ' + previousGuessesArr.join(' - ');
+}
 function refreshPage() {
     location.reload();
 }
