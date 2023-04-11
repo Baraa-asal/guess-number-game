@@ -1,0 +1,48 @@
+body {
+    padding: 3%;
+    background-color: rgb(226, 223, 219);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.custom-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+button {
+    width: 150px;
+}
+
+.custom-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 40px;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgb(95, 94, 94);
+    border-radius: 10px;
+}
+
+#inputGuess {
+    padding: 16px;
+    border-radius: 10px;
+    border: inset 2px #198754;
+}
+#playAgainButton {
+    border-radius: 10px ;
+}
