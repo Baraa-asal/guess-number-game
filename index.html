@@ -10,9 +10,8 @@
     <script src="./script.js" defer></script>
     <title>Guessing Game</title>
 </head>
-
 <body>
-    <header>
+    <header class="">
         <h2 class="d-inline">Welcome to Guessing Game ! <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
                 fill="#198754" class="bi bi-balloon" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -22,13 +21,14 @@
     <main>
         <div class="container">
             <div class="row">
-                <p class="text-center mb-5">We have chosen a random number between 500 and 500K! You have 10 attempts to
-                    guess the number.</p>
+                <p class="text-center mb-5">We have chosen a random number between 10 and 50! You have 20 attempts to
+                    guess the number.<br> لقد اخترنا رقماً بين 10-50، لديك 20 محاولة لتخمين الرقم!
+                </p>
             </div>
             <div class="custom-background mb-4" id="customBackground">
                 <form class="form-inline custom-form mb-5">
                     <div class="form-group mx-sm-3 mb-2">
-                        <input id="inputGuess" class="form-control mb-2" placeholder="500 - 5K" type="number">
+                        <input id="inputGuess" class="form-control mb-2" placeholder="10 - 50" type="number">
                     </div>
                     <button id="sumbitButton" type="submit" class="btn btn-success mb-2"
                         onclick="processGuess(event)">Submit guess</button>
