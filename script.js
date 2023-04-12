@@ -17,7 +17,7 @@ playAgainButton.style.visibility = "hidden";
 
 function processGuess(event) {
 
-    if (previousGuessesArr.length < 20) {
+    if (previousGuessesArr.length < 19) {
     let userGuess = Number(userInput.value); 
     previousGuessesArr.push(userGuess);
     renderAttempts();
@@ -58,7 +58,7 @@ else {
 }
 }
 function renderAttempts() {
-    previousGuesses.innerText = 'Previous guesses: ' + previousGuessesArr.join(' - ');
+    previousGuesses.innerText = 'Previous guesses: ' + previousGuessesArr.join(' - ') + '\n' + 'Remaining attempts: ' + (20 - previousGuessesArr.length );
 }
 function dispalyRandomNumber() {
     previousGuesses.innerText = `The number was: ${randomNumber}`;
